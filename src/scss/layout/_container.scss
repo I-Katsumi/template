@@ -1,0 +1,15 @@
+@use '../foundation/variable';
+@use '../foundation/mixin';
+
+.l-container {
+    padding: 30px 30px;
+    text-align: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    @include mixin.breakpoint(tab) {
+        padding: 50px 50px;
+    }
+    @include mixin.breakpoint(pc) {
+        padding: 80px 50px;
+    }
+}

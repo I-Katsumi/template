@@ -1,0 +1,116 @@
+@use '../../foundation/variable';
+@use '../../foundation/mixin';
+
+.p-mainvisual {
+    position: relative;
+
+    &__image {
+        object-position: center;
+        object-fit     : cover;
+        height: 100%;
+
+        &--sp {
+        margin-top: 60px;
+        // @include mixin.breakpoint(tab) {
+        //     margin-top: -100px;
+        // }
+            @include mixin.breakpoint(tab) {
+                display: none;
+            }
+        }
+        &--pc {
+            display: none;
+        @include mixin.breakpoint(tab) {
+            display: block;
+            max-height: 1000px;
+            object-fit     : cover;
+
+
+        }
+
+        }
+
+    }
+    &__massage {
+        position: absolute;
+        z-index: 10;
+        right: 0;
+        bottom: 0;
+        // left: 0;
+        color: #000;
+        padding: 20px;
+
+        text-align: right;
+        @include mixin.breakpoint(tab) {
+            left: 50px;
+            // display: flex;
+            // align-items: flex-end;
+            // justify-content: space-between;
+            // width: 100%;
+            text-align: left;
+        }
+
+    }
+    &__title {
+        // text-shadow: 1px 2px 3px #808080;
+        // content: "";
+        // top: 50px;
+        color: #fff;
+        // text-shadow: 1px 2px 3px  #cccc;
+        font-size: 10vw;
+        font-size: 6rem;
+        font-size: max(10vw, 6rem);
+        font-weight: 700;
+        line-height: 1.2;
+        padding-bottom: 20px;
+        @include mixin.breakpoint(tab) {
+
+        }
+    }
+    &__text {
+        color: #fff;
+        // align-self: flex-end;
+    }
+}
+
+
+.l-sidebar {
+    position: absolute;
+    width: 200px;
+    background: rgb(255, 255, 255, 60%);
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.p-sidebar {
+    &__inner {
+        text-align: center;
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        // align-content: flex-end;
+        justify-content: space-between;
+        height: 100%;
+    }
+    &__title {
+        & span {
+            font-size: 60px;
+        }
+    }
+    &__info {
+        &__tel {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 15px 0;
+        }
+        &__sns-icon {
+            font-size: 4rem;
+            &:first-child {
+                padding-left: 15px;
+
+            }
+        }
+    }
+
+}

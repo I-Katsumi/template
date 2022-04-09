@@ -1,0 +1,12 @@
+@use '../../foundation/variable';
+@use '../../foundation/mixin';
+
+.c-mark {
+    margin-left: 10px;
+    width: 40px;
+    height: 8px;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    transform: skew(45deg);
+
+}

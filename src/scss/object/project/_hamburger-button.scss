@@ -1,0 +1,62 @@
+@use '../../foundation/variable';
+@use '../../foundation/mixin';
+
+.p-hamburger {
+	width           : 70px;
+	height          : 60px;
+	// background-color: #fff;
+	position        : relative;
+    // position: fixed;
+    // right: 0;
+    z-index: 9999999;
+
+    @include mixin.breakpoint(pc) {
+        display: none;
+
+    }
+    &::before,
+	&::after {
+		content   : "";
+		width     : 30px;
+		height         : 1.5px;
+		background: variable.$c--default;
+		// background:pink;
+		position  : absolute;
+		left      : calc( 50% - ( 30px / 2 ) );
+		display   : block;
+		transition: transform 0.4s;
+        
+	}
+	&::before {
+		top: 22px;
+	}
+	&::after {
+		top: 38px;
+	}
+	> span {
+		width          : 30px;
+		height         : 1.5px;
+		font-size      : 0;
+		background     : linear-gradient( to right, variable.$c--default, variable.$c--default ) repeat-x variable.$c--default;
+		// background-size: auto $btnHeight;
+        background-size: auto 1.5px;
+		position       : absolute;
+		left           : calc( 50% - ( 30px / 2 ) );
+		top            : 50%;
+		transition     : transform 0.4s;
+	}
+	&.is-open {
+		&::before {
+			transform: rotate( 45deg );
+			top      : 28px;
+		}
+		&::after {
+			transform: rotate( -45deg );
+			top      : 28px;
+		}
+		> span {
+			background: none;
+		}
+	}
+}
+
