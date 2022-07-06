@@ -4,10 +4,9 @@
 .p-hamburger {
 	width           : 70px;
 	height          : 60px;
-	// background-color: #fff;
 	position        : relative;
-    // position: fixed;
-    // right: 0;
+    position: fixed;
+    right: 0;
     z-index: 9999999;
 
     @include mixin.breakpoint(pc) {
@@ -20,7 +19,6 @@
 		width     : 30px;
 		height         : 1.5px;
 		background: variable.$c--default;
-		// background:pink;
 		position  : absolute;
 		left      : calc( 50% - ( 30px / 2 ) );
 		display   : block;
